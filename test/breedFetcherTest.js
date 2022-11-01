@@ -17,4 +17,15 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+  it('returns an error', (done) => {
+    fetchBreedDescription('Doodlebop', (err, desc) => {
+      assert.equal(err, "Error: Breed Not Found");
+
+      const expectedDesc = null;
+      // compare returned description
+      assert.equal(expectedDesc, desc);
+
+      done();
+    });
+  });
 });
